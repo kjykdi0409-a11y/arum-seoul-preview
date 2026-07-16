@@ -253,8 +253,12 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 }
 .p-card.feat .p-tag{color:var(--gold-soft);border-color:rgba(194,168,120,.5)}
 .p-card h3{font-size:1.7rem;margin-bottom:6px}
-.p-for{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:.98rem;margin-bottom:24px}
+.p-for{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:.98rem;margin-bottom:18px}
 .p-card.feat .p-for{color:var(--gold-soft)}
+.p-price{font-family:var(--serif);font-size:2.1rem;font-weight:400;line-height:1;margin-bottom:6px}
+.p-price small{font-family:var(--sans);font-size:.78rem;color:var(--ink-faint);letter-spacing:.04em;display:block;margin-top:8px;font-weight:300}
+.p-card.feat .p-price small{color:rgba(245,239,230,.55)}
+.p-fine{margin-top:34px;text-align:center;font-size:.82rem;color:var(--ink-faint);line-height:1.9;max-width:70ch;margin-left:auto;margin-right:auto}
 .p-desc{font-size:.9rem;color:var(--ink-soft);margin-bottom:26px}
 .p-card.feat .p-desc{color:rgba(245,239,230,.72)}
 .p-list{flex:1;display:flex;flex-direction:column;gap:11px;margin-bottom:34px}
@@ -670,51 +674,60 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:64px 0 44px;font-s
 
     <div class="p-grid">
       <div class="p-card rv">
-        <span class="p-tag">Consultation days</span>
+        <span class="p-tag">Day rate</span>
         <h3>Companion</h3>
         <span class="p-for">For skin treatments, consultations &amp; shorter visits</span>
-        <p class="p-desc">Professional interpretation and advocacy for your consultation and treatment days, booked per day.</p>
+        <div class="p-price">$500<small>per full day (8 hours) · half-day $300 · extra hour $60</small></div>
+        <p class="p-desc">Professional interpretation and advocacy, booked by the day.</p>
         <ul class="p-list">
-          <li>In-room interpretation at consultations &amp; appointments</li>
-          <li>Consent form and paperwork translation</li>
-          <li>Written English summary of every appointment</li>
-          <li>Pre-surgery verification checklist</li>
+          <li>Full-day accompaniment — as many clinics as you wish</li>
+          <li>In-room interpretation of the medicine, not the marketing</li>
+          <li>Consent form and paperwork translation before you sign</li>
+          <li>Same-day written English summary of every appointment</li>
+          <li>Pre-treatment verification checklist</li>
           <li>WhatsApp support on booked days</li>
         </ul>
-        <a class="btn" href="#contact">Request a quote</a>
+        <a class="btn" href="#contact">Check availability</a>
       </div>
 
       <div class="p-card feat rv rv-d1">
         <span class="p-tag">Most chosen</span>
         <h3>Signature</h3>
-        <span class="p-for">Full care · 10–14 days in Seoul</span>
+        <span class="p-for">Full care · 10 days in Seoul</span>
+        <div class="p-price">$3,900<small>10 days · extend at $250 per day</small></div>
         <p class="p-desc">End-to-end care for a complete treatment journey — rhinoplasty, blepharoplasty, breast surgery and similar recovery windows.</p>
         <ul class="p-list">
-          <li>Everything in Companion</li>
+          <li>Two pre-departure video planning sessions + checklist</li>
           <li>Airport meet &amp; greet and settling-in support</li>
-          <li>Surgery-day accompaniment — there when you wake</li>
-          <li>Daily check-ins &amp; 24/7 line throughout your stay</li>
-          <li>Follow-up visits, medication runs, errands</li>
+          <li>Up to 3 fully accompanied consultation days</li>
+          <li>Treatment-day accompaniment — there when you wake</li>
+          <li>Daily check-ins (visit or video), every single day</li>
+          <li>Two accompanied follow-up visits</li>
+          <li>Medication &amp; grocery runs (three included)</li>
+          <li>24/7 emergency line — always free, any hour</li>
           <li>Family updates in their time zone</li>
         </ul>
-        <a class="btn btn-solid" href="#contact">Request a quote</a>
+        <a class="btn btn-solid" href="#contact">Check availability</a>
       </div>
 
       <div class="p-card rv rv-d2">
         <span class="p-tag">Extended recovery</span>
         <h3>Full Circle</h3>
-        <span class="p-for">2–3+ weeks · facelift &amp; facial contouring</span>
+        <span class="p-for">Up to 21 days · facelift &amp; facial contouring</span>
+        <div class="p-price">$5,900<small>up to 21 days in Seoul + 30 days after you're home</small></div>
         <p class="p-desc">Our most complete engagement, for procedures that deserve an unhurried recovery — plus continued care after you land home.</p>
         <ul class="p-list">
-          <li>Everything in Signature, for an extended stay</li>
-          <li>Beside you at de-swelling &amp; aftercare treatments</li>
-          <li>Discreet companionship through the long middle weeks</li>
+          <li>Everything in Signature, for up to three weeks</li>
+          <li>Beside you at de-swelling &amp; aftercare treatments, twice weekly</li>
+          <li>Discreet companionship — walks, quiet cafés — through the long middle weeks</li>
           <li>Departure planning &amp; your fit-to-fly follow-up</li>
-          <li>30 days of post-return virtual interpretation support</li>
+          <li>30 days of post-return virtual interpretation with your clinic</li>
         </ul>
-        <a class="btn" href="#contact">Request a quote</a>
+        <a class="btn" href="#contact">Check availability</a>
       </div>
     </div>
+
+    <p class="p-fine rv">We take one client at a time — never two. Medical emergencies are covered free at any hour, on every engagement. Late-night non-urgent companionship $100/hr. Transport, accommodation, meals, and all medical costs are yours, paid directly — we never touch your medical money. Prices in USD; a written quote confirms everything before you book.</p>
 
     <div class="p-promise rv">
       <svg viewBox="0 0 24 24" fill="none" stroke="#a5824d" stroke-width="1.2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
@@ -797,7 +810,8 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:64px 0 44px;font-s
       <details>
         <summary>What do your services cost?<span class="x"></span></summary>
         <div class="faq-a">
-          <p>A flat fee, quoted in writing after your free video call, based on your dates and the level of care you want — never a percentage of your surgery, never adjusted by what you spend at the clinic. Most clients find our fee is a small fraction of what hidden broker commissions would have silently added to their quote.</p>
+          <p>Exactly what's published on this page — $500 per day, $3,900 for ten days of full care, $5,900 for our most complete engagement. We're the only service in this market that publishes its prices, because we're the only one whose prices don't depend on which clinic you choose or what you spend there. Your written quote simply confirms the same numbers before you book.</p>
+          <p>For context: hiring a patient advocate in the US runs $150–325 per hour. Hidden broker commissions in Seoul have been documented adding 30–90% to surgery bills. Our fee is neither hidden nor a percentage — it's just a fee.</p>
         </div>
       </details>
       <details>
@@ -954,11 +968,19 @@ const navLinks = document.getElementById("navLinks");
 burger.addEventListener("click", () => navLinks.classList.toggle("open"));
 navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-/* reveal on scroll */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-}, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
-document.querySelectorAll(".rv").forEach(el => io.observe(el));
+/* reveal on scroll — with a fallback: if the observer never fires
+   (in-app browsers, reader modes), show everything after 1s */
+const rvEls = document.querySelectorAll(".rv");
+const revealAll = () => rvEls.forEach(el => el.classList.add("in"));
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  rvEls.forEach(el => io.observe(el));
+  setTimeout(() => { if (!document.querySelector(".rv.in")) revealAll(); }, 1000);
+} else {
+  revealAll();
+}
 
 /* single-open FAQ */
 document.querySelectorAll(".faq-list details").forEach(d => {
