@@ -119,7 +119,7 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 /* truth (dark) */
 .truth{background:linear-gradient(180deg,var(--dark) 0%,var(--dark-2) 100%);color:var(--paper)}
 .truth .lede{color:rgba(245,239,230,.72)}
-.truth-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,239,230,.12);margin-top:66px;border:1px solid rgba(245,239,230,.12)}
+.truth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,239,230,.12);margin-top:66px;border:1px solid rgba(245,239,230,.12)}
 .tcard{background:var(--dark-2);padding:clamp(28px,3.2vw,48px)}
 .tcard .num{font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--gold-soft);display:block;margin-bottom:16px}
 .tcard h3{font-size:1.3rem;margin-bottom:13px;color:var(--white)}
@@ -153,6 +153,10 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 .w-body h3{font-size:clamp(1.35rem,2.1vw,1.75rem);margin-bottom:14px}
 .w-body p{color:var(--ink-soft);font-size:.96rem}
 .w-body p+p{margin-top:11px}
+.w-body ul{margin-top:20px;display:flex;flex-direction:column;gap:9px}
+.w-body li{font-size:.9rem;color:var(--ink-soft);padding-left:23px;position:relative;line-height:1.6}
+.w-body li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+.w-body li b{color:var(--ink);font-weight:500}
 
 /* pricing */
 .pricing{background:var(--paper);border-top:1px solid var(--line)}
@@ -271,7 +275,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
 @media(max-width:980px){
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .j2-grid,.truth-grid,.incl-grid,.p-grid,.addons,.c-grid{grid-template-columns:1fr}
+  .j2-grid,.truth-grid,.p-grid,.addons,.c-grid{grid-template-columns:1fr}
   .p-grid{max-width:520px}
 }
 @media(max-width:820px){
@@ -292,8 +296,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
     <a class="logo" href="#top">ARUM<span>&nbsp;Seoul</span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#journeys">Two Journeys</a>
-      <a href="#included">What's Included</a>
-      <a href="#week">Your Week</a>
+      <a href="#included">Your Week</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-sm">Start a conversation</a>
@@ -355,9 +358,8 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
         <span class="j2-no">Journey One</span>
         <h3>Skin &amp; Seoul</h3>
         <span class="j2-sub">Dermatology, and the week around it</span>
-        <p>Korea's dermatology is genuinely a decade ahead — lasers, boosters, lifting, treatments that simply aren't offered at home yet, at prices that make the flight pay for itself. But the good clinics don't advertise in English, and the ones that do aren't always the good ones.</p>
-        <p>We talk it through before you fly, agree on a shortlist together, and book it. Then we're with you at the appointments — translating what the doctor actually said, not the sales version.</p>
-        <p>And because skin treatments leave you free by the afternoon, the rest of the week is yours: the food you've been reading about, the palaces, the pottery village two hours out, the Olive Young run where someone tells you which of the four hundred products is worth it.</p>
+        <p>Korea's dermatology is genuinely a decade ahead — lasers, boosters, lifting, treatments not offered at home yet, at prices that make the flight pay for itself. But the good clinics don't advertise in English, and the ones that do aren't always the good ones. We research them with you, book what you choose, and come to every appointment — translating what the doctor actually said, not the sales version.</p>
+        <p>And because skin treatments leave you free by the afternoon, the rest of the week is genuinely yours: the food, the palaces, the neighbourhoods, the shopping run where someone finally tells you which of the four hundred products is worth it.</p>
         <div class="j2-for"><b>Right for you if</b> — you want lasers, injectables, boosters, lifting or a full skin reset, and you'd like the trip to feel like a holiday rather than a hospital stay.</div>
       </div>
 
@@ -366,8 +368,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
         <h3>Surgery &amp; Recovery</h3>
         <span class="j2-sub">The week that asks the most of you</span>
         <p>Surgery abroad is a different kind of week. There's a consultation where every word matters, a morning you'd rather not face alone, and days afterward when you're swollen, tired, and eight thousand kilometres from anyone who knows you.</p>
-        <p>We're there for all of it. In the consultation room, interpreting the risks as carefully as the promises — and making sure the surgeon who consults you is named, in writing, as the one who operates. On the morning itself. And in the days after, when the swelling peaks and someone needs to bring the arnica, the cold compress, the soft food, the hat you can hide under.</p>
-        <p>Those supplies are bought and waiting before you land. That's the part nobody tells you about, and the part we take most seriously.</p>
+        <p>We're there for all of it — interpreting the risks as carefully as the promises, making sure the surgeon who consults you is named in writing as the one who operates, and turning up on the morning itself. Then the days after, when the swelling peaks and someone needs to bring the arnica, the cold compress, the soft food, the hat you can hide under. <b style="font-weight:500;color:var(--ink)">Those supplies are bought and waiting before you land.</b></p>
         <div class="j2-for"><b>Right for you if</b> — you're having a surgical procedure and you want someone in the room, on the day, and through the recovery.</div>
       </div>
     </div>
@@ -386,23 +387,18 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
     <div class="truth-grid">
       <div class="tcard rv">
         <span class="num">No. 01</span>
-        <h3>The clinic's "coordinator" is a sales role</h3>
-        <p>The friendly English speaker at most clinics is employed to book procedures — fluent on the upsell, vague on the risks. Your careful description of what you want can arrive as one flat sentence. <b>Informed consent needs a voice that answers only to you.</b></p>
+        <h3>Almost everyone helping you is paid by the clinic</h3>
+        <p>The friendly English speaker at the clinic is employed to book procedures — fluent on the upsell, vague on the risks. And brokers routinely add 30–50%, in documented cases up to 90%, on top of what Korean patients pay for the same procedure. <b>When your helper is paid by the clinic, you are the product.</b></p>
       </div>
       <div class="tcard rv rv-d1">
         <span class="num">No. 02</span>
-        <h3>Hidden commissions inflate your quote</h3>
-        <p>Brokers routinely add 30–50% — in documented cases up to 90% — on top of what Korean patients pay for the same procedure. Taxi drivers, hotel staff and Instagram "consultants" all collect referral fees. <b>When your helper is paid by the clinic, you are the product.</b></p>
-      </div>
-      <div class="tcard rv rv-d2">
-        <span class="num">No. 03</span>
         <h3>The CCTV law exists for a reason</h3>
         <p>Korea legislated operating-room CCTV in 2023 because surgeon substitution happened at scale. You have the right to request recording under general anaesthesia — <b>but you must ask in writing, before surgery, and almost no foreign patient is told.</b></p>
       </div>
-      <div class="tcard rv rv-d3">
-        <span class="num">No. 04</span>
+      <div class="tcard rv rv-d2">
+        <span class="num">No. 03</span>
         <h3>Afterwards, most people are on their own</h3>
-        <p>The procedure takes an hour. The week takes a week — in a city where you can't read a pharmacy label, in a hotel room, with a face you don't recognise yet. <b>This is the part we were built for.</b></p>
+        <p>The procedure takes an hour. The recovery takes a week — in a city where you can't read a pharmacy label, in a hotel room, with a face you don't recognise yet. <b>This is the part we were built for.</b></p>
       </div>
     </div>
 
@@ -410,117 +406,98 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
   </div>
 </section>
 
-<!-- INCLUDED -->
-<section class="incl section-pad" id="included">
+<!-- YOUR WEEK (merged: timeline + what's included) -->
+<section class="week section-pad" id="included">
   <div class="wrap">
     <div class="center">
-      <p class="eyebrow rv">What's included</p>
-      <h2 class="h-lg rv rv-d1" style="margin-top:20px">Everything below is in the price.</h2>
-      <p class="lede rv rv-d2" style="max-width:56ch;margin:22px auto 0">Not a menu of upgrades. This is simply what we do for everyone who comes.</p>
+      <p class="eyebrow rv">Your week</p>
+      <h2 class="h-lg rv rv-d1" style="margin-top:20px">How the week goes &mdash; and what's in the price</h2>
+      <p class="lede rv rv-d2" style="max-width:56ch;margin:22px auto 0">Everything listed here is included. Not a menu of upgrades &mdash; simply what we do for everyone who comes.</p>
     </div>
-
-    <div class="incl-grid">
-      <div class="ig rv">
-        <h3>Before you fly</h3>
-        <ul>
-          <li>A free first video call, then as many messages as it takes — no clock running</li>
-          <li><b>Clinic shortlist built with you</b>, researched properly, then booked once you've decided</li>
-          <li><b>Your hotel chosen inside your budget</b> — high-end or modest, near your clinic and on a street that's quiet at night; we send you the exact place and the booking, you confirm it in your own name</li>
-          <li>A day-by-day plan if you want one, or a loose one if you don't</li>
-          <li>Restaurant reservations — fine dining through to the place with no English menu and a queue outside</li>
-          <li>Honest guidance on how many days your treatment actually needs</li>
-        </ul>
-      </div>
-
-      <div class="ig rv rv-d1">
-        <h3>At the clinic</h3>
-        <ul>
-          <li>In-room interpretation at every appointment — the medicine, not the marketing</li>
-          <li>Consent forms and paperwork translated <b>before</b> you sign anything</li>
-          <li>A written English summary of what was said, so nothing is lost to memory or anaesthesia</li>
-          <li>Our verification checklist: named surgeon in writing, board certification, anaesthesiologist present, CCTV request filed, itemised quote</li>
-          <li>Someone beside you who has no stake in you saying yes</li>
-        </ul>
-      </div>
-
-      <div class="ig rv rv-d2">
-        <h3>Recovery, looked after</h3>
-        <ul>
-          <li><b>Supplies bought and waiting before you arrive</b> — de-swelling supplements, bruise ointment, cold packs, a hat you can disappear under</li>
-          <li>Accompanied follow-up visits and aftercare appointments</li>
-          <li>Pharmacy runs, groceries, soft food when chewing is a project</li>
-          <li>Daily check-ins while you're here, and a line that's open at any hour</li>
-          <li>Emergencies answered immediately, at no charge, whatever time it is</li>
-        </ul>
-      </div>
-
-      <div class="ig rv rv-d3">
-        <h3>The city, if you want it</h3>
-        <ul>
-          <li>Museums, galleries, palaces, the neighbourhoods worth the walk — planned around how you're actually feeling that day</li>
-          <li><b>Olive Young and skincare shopping with someone who knows</b> — what's worth it, what's marketing, and where it's cheaper</li>
-          <li>Cultural experiences arranged: Icheon pottery, the DMZ, a temple stay, whatever you're curious about</li>
-          <li>Transport during our days together — we ride together, it's covered</li>
-          <li>Every plan stays flexible. If today turns out to be a stay-in-bed day, that's the plan.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WEEK -->
-<section class="week section-pad" id="week">
-  <div class="wrap">
-    <p class="eyebrow rv">Your week</p>
-    <h2 class="h-lg rv rv-d1" style="margin-top:20px;max-width:20ch">How five to seven days actually go</h2>
 
     <div class="w-list">
       <div class="w-step rv">
         <div class="w-dot"><i></i></div>
         <div class="w-body">
-          <span class="w-phase">Weeks before — Planning</span>
+          <span class="w-phase">Before you fly</span>
           <h3>The trip is designed before you pack</h3>
-          <p>It starts with a free video call. What you're hoping for, what worries you, what you can afford, how many days you can be away. Then, if you'd like us to, the real work: researching clinics against your case, sending you a shortlist with the reasoning, and — once <em>you've</em> chosen — arranging the appointments and finding you the right hotel, spaced so you're never rushed.</p>
-          <p>By the time you board, you know where you're sleeping, who you're seeing, and what each day looks like.</p>
+          <p>It starts with a free video call. Then the research, if you'd like us to do it &mdash; so that by the time you board, you know where you're sleeping, who you're seeing, and what each day holds.</p>
+          <ul>
+            <li><b>A clinic shortlist built with you</b> &mdash; researched against your case, with our honest reasoning, then booked once you've decided</li>
+            <li><b>Your hotel chosen inside your budget</b> &mdash; near your clinic, on a street that's quiet at night; we send you the exact place, you confirm it in your own name</li>
+            <li>Restaurant reservations, from fine dining to the place with no English menu and a queue outside</li>
+            <li>A day-by-day plan if you want one, a loose one if you don't</li>
+            <li>Honest guidance on how many days your treatment actually needs</li>
+          </ul>
         </div>
       </div>
 
       <div class="w-step rv">
         <div class="w-dot"><i></i></div>
         <div class="w-body">
-          <span class="w-phase">Day one — Arrival</span>
+          <span class="w-phase">Day one</span>
           <h3>You land, settle, and we meet properly</h3>
-          <p>You'll make your own way in from Incheon — it's genuinely straightforward, and we'll have sent you exactly how, step by step, before you fly. If you'd rather be met, we'll arrange a private transfer for you at cost.</p>
-          <p>Then we meet at your hotel: the plan for the week, your questions, where the nearest pharmacy and convenience store are, and a first meal somewhere good.</p>
+          <p>You'll make your own way in from Incheon &mdash; we'll have sent you exactly how, step by step. If you'd rather be met, we'll arrange a private transfer at cost. Then we meet at your hotel, over a first good meal.</p>
+          <ul>
+            <li>Where the nearest pharmacy, convenience store and cash machine are</li>
+            <li>Transport cards, SIM, and how to get anywhere you'll need to go</li>
+          </ul>
         </div>
       </div>
 
       <div class="w-step rv">
         <div class="w-dot"><i></i></div>
         <div class="w-body">
-          <span class="w-phase">The middle — Treatment</span>
+          <span class="w-phase">At the clinic</span>
           <h3>The days that matter, accompanied from morning</h3>
-          <p>Consultation, treatment, follow-up — we're with you from the start of the day. Interpreting, watching the paperwork, asking the questions you shouldn't have to know to ask. If it's surgery, we're there before you go in and there when you come round.</p>
-          <p>Afterwards, back to the hotel, with the supplies already in the room.</p>
+          <p>We're with you from the start of the day &mdash; interpreting, watching the paperwork, asking the questions you shouldn't have to know to ask. If it's surgery, we're there before you go in and there when you come round.</p>
+          <ul>
+            <li>In-room interpretation at every appointment &mdash; the medicine, not the marketing</li>
+            <li>Consent forms and paperwork translated <b>before</b> you sign anything</li>
+            <li>A written English summary of what was said, so nothing is lost to memory or anaesthesia</li>
+            <li><b>Our verification checklist</b>: named surgeon in writing, board certification, anaesthesiologist present, CCTV request filed, itemised quote</li>
+            <li>Someone beside you who has no stake in you saying yes</li>
+          </ul>
         </div>
       </div>
 
       <div class="w-step rv">
         <div class="w-dot"><i></i></div>
         <div class="w-body">
-          <span class="w-phase">Between — Yours</span>
-          <h3>The days we're not together are still covered</h3>
-          <p>Three of your days include full accompaniment on a five-to-seven-day trip; four on a longer one. The others, Seoul is yours — with plans already made, reservations already booked, and one message away if anything at all comes up. Lost, confused, unwell, or just want company for dinner: message.</p>
-          <p>And if recovery turns harder than expected, we don't watch the clock. Staying longer because you need us is our call to make, and it isn't billed. Extra days are for the good version — when you're well and want another day out in the city.</p>
+          <span class="w-phase">Recovery</span>
+          <h3>The part nobody warns you about</h3>
+          <p>Afterwards, back to the hotel &mdash; with the supplies already in the room. Three days include full accompaniment on a five-to-seven-day trip, four on a longer one. And if recovery turns harder than expected, we stay, and we don't bill you for it.</p>
+          <ul>
+            <li><b>Supplies bought and waiting before you arrive</b> &mdash; de-swelling supplements, bruise ointment, cold packs, a hat you can disappear under</li>
+            <li>Accompanied follow-up visits and aftercare appointments</li>
+            <li>Pharmacy runs, groceries, soft food when chewing is a project</li>
+            <li>Daily check-ins, and a line that's open at any hour</li>
+            <li>Emergencies answered immediately, at no charge, whatever time it is</li>
+          </ul>
         </div>
       </div>
 
       <div class="w-step rv">
         <div class="w-dot"><i></i></div>
         <div class="w-body">
-          <span class="w-phase">Going home — And after</span>
+          <span class="w-phase">In between</span>
+          <h3>The city, whenever you're up for it</h3>
+          <p>On the days we're not together, Seoul is yours &mdash; plans already made, reservations already booked. Tell us what you're curious about and we'll build the day around it. And if today turns out to be a stay-in-bed day, that's the plan.</p>
+          <ul>
+            <li>Museums, galleries, palaces, the neighbourhoods worth the walk &mdash; planned around how you're actually feeling</li>
+            <li><b>Olive Young and skincare shopping with someone who knows</b> &mdash; what's worth it, what's marketing, and where it's cheaper</li>
+            <li>Whatever you're curious about, arranged: a market, a temple, a maker's studio, a day out of the city</li>
+            <li>Transport on our days together &mdash; we ride together, it's covered</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-step rv">
+        <div class="w-dot"><i></i></div>
+        <div class="w-body">
+          <span class="w-phase">Going home &mdash; and after</span>
           <h3>We don't disappear at the airport</h3>
-          <p>Before you fly, a final check that you're fit to travel and clear on aftercare. After you're home, we stay your bridge to the clinic — questions relayed, answers translated, photos passed on. The conversation doesn't go quiet just because you did.</p>
+          <p>Before you fly, a final check that you're fit to travel. After you're home, we stay your bridge to the clinic &mdash; questions relayed, answers translated. The conversation doesn't go quiet just because you did.</p>
         </div>
       </div>
     </div>
@@ -575,7 +552,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
           <li>Extra accompanied days — most people add one or two</li>
           <li>Airport transfer, arranged for you (we book it; you ride)</li>
           <li>Private car with driver, charged by the day</li>
-          <li>Out-of-city experiences — Icheon, the DMZ — at cost, plus rental and insurance</li>
+          <li>Day trips out of the city — at cost, plus car hire and insurance</li>
           <li>Group travel: from three people, taxis are split separately</li>
         </ul>
       </div>
@@ -653,9 +630,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
     <h2 class="h-lg rv rv-d1 center" style="margin-top:20px">What we will <em class="gold">never</em> do</h2>
     <div class="never-list">
       <div class="never-item rv"><b>Never take a commission.</b><p>Not a referral fee, not a kickback, not a "marketing partnership", not a discount quietly passed to us instead of to you. Our entire income is the fee on your invoice. It is the reason everything else on this page can be true.</p></div>
-      <div class="never-item rv"><b>Never send you somewhere because we're paid to.</b><p>We research clinics against your case and tell you what we found — including what we didn't like. You decide; we book what you chose. Since no clinic can pay us, no clinic can buy its way onto your shortlist.</p></div>
-      <div class="never-item rv"><b>Never mark up what you pay.</b><p>Your hotel costs what the hotel charges. Your treatment costs what the clinic charges. We don't take a slice of your bookings, and we'll show you the rates.</p></div>
-      <div class="never-item rv"><b>Never give medical advice.</b><p>We're not doctors and won't pretend to be. Every medical decision belongs to you and the licensed physicians you choose. Our job is making sure nothing is lost between you.</p></div>
+      <div class="never-item rv"><b>Never mark up what you pay.</b><p>Your hotel costs what the hotel charges; your treatment costs what the clinic charges. We take no slice of your bookings, and since no clinic can pay us, none can buy its way onto your shortlist.</p></div>
       <div class="never-item rv"><b>Never leave while you still need us.</b><p>Your package includes a set number of accompanied days. But if we judge that you need us longer — a hard recovery, a complication, a day that simply went wrong — we stay, and we don't charge you for it. Added days are for when <em>you</em> want more of Seoul, not for when you're struggling.</p></div>
       <div class="never-item rv"><b>Never rush you.</b><p>"This price expires Friday" is a sales tactic, not medicine. If anyone pressures you, we'll be the voice saying: you're allowed to sleep on it, and you're allowed to walk out.</p></div>
       <div class="never-item rv"><b>Never speak of your visit.</b><p>Discretion is absolute. No testimonials without your written consent, no photos, no stories. We'll sign an NDA on request.</p></div>
@@ -812,8 +787,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
       </div>
       <nav class="foot-links">
         <a href="#journeys">Two Journeys</a>
-        <a href="#included">What's Included</a>
-        <a href="#week">Your Week</a>
+        <a href="#included">Your Week</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
