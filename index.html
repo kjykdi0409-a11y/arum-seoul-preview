@@ -172,11 +172,15 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 .addons li{font-size:.88rem;color:var(--ink-soft);padding-left:22px;position:relative;line-height:1.6}
 .addons li::before{content:"+";position:absolute;left:2px;color:var(--gold);font-weight:600}
 .addons .no li::before{content:"·";color:var(--ink-faint)}
-.p-pay{margin-top:52px;border:1px solid var(--line-gold);border-radius:4px;padding:clamp(28px,3vw,44px);display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;background:linear-gradient(120deg,rgba(165,130,77,.06),transparent 60%)}
-.p-pay svg{width:34px;height:34px;flex:none;margin-top:3px}
-.p-pay h4{font-family:var(--serif);font-weight:500;font-size:1.22rem;margin-bottom:9px}
-.p-pay p{font-size:.93rem;color:var(--ink-soft);max-width:78ch}
-.p-pay p+p{margin-top:10px}
+.p-pay{margin-top:52px;border:1px solid var(--line-gold);border-radius:4px;padding:clamp(28px,3vw,44px);background:linear-gradient(120deg,rgba(165,130,77,.06),transparent 60%)}
+.p-pay>h4{font-family:var(--serif);font-weight:500;font-size:1.3rem;margin-bottom:6px}
+.p-pay>p.sub{font-size:.9rem;color:var(--ink-faint);margin-bottom:28px}
+.pay-steps{display:grid;gap:22px}
+.pay-step{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline}
+.pay-step .n{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem;white-space:nowrap}
+.pay-step b{display:block;font-weight:500;font-size:.98rem;margin-bottom:5px}
+.pay-step p{font-size:.91rem;color:var(--ink-soft);max-width:74ch}
+@media(max-width:560px){.pay-step{grid-template-columns:1fr;gap:6px}}
 .p-fine{margin-top:34px;text-align:center;font-size:.83rem;color:var(--ink-faint);line-height:1.9;max-width:74ch;margin-left:auto;margin-right:auto}
 @media(max-width:640px){.p-pay{grid-template-columns:1fr;gap:16px}}
 
@@ -414,9 +418,9 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
       <div class="ig rv">
         <h3>Before you fly</h3>
         <ul>
-          <li>A free video call, then as many messages as it takes — no clock running</li>
+          <li>A free first video call, then as many messages as it takes — no clock running</li>
           <li><b>Clinic shortlist built with you</b>, researched properly, then booked once you've decided</li>
-          <li><b>Your hotel booked inside your budget</b> — high-end or modest, near the clinic, we know which streets are quiet</li>
+          <li><b>Your hotel chosen inside your budget</b> — high-end or modest, near your clinic and on a street that's quiet at night; we send you the exact place and the booking, you confirm it in your own name</li>
           <li>A day-by-day plan if you want one, or a loose one if you don't</li>
           <li>Restaurant reservations — fine dining through to the place with no English menu and a queue outside</li>
           <li>Honest guidance on how many days your treatment actually needs</li>
@@ -471,7 +475,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
         <div class="w-body">
           <span class="w-phase">Weeks before — Planning</span>
           <h3>The trip is designed before you pack</h3>
-          <p>It starts with a free video call. What you're hoping for, what worries you, what you can afford, how many days you can be away. Then the work: researching clinics against your case, sending you a shortlist with the reasoning, and — once <em>you've</em> chosen — making the bookings. Hotel inside your budget. Appointments spaced so you're never rushed.</p>
+          <p>It starts with a free video call. What you're hoping for, what worries you, what you can afford, how many days you can be away. Then, if you'd like us to, the real work: researching clinics against your case, sending you a shortlist with the reasoning, and — once <em>you've</em> chosen — arranging the appointments and finding you the right hotel, spaced so you're never rushed.</p>
           <p>By the time you board, you know where you're sleeping, who you're seeing, and what each day looks like.</p>
         </div>
       </div>
@@ -574,19 +578,39 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
         <h4>What you pay directly, never through us</h4>
         <ul>
           <li>All medical and treatment fees — paid by you, to the clinic</li>
-          <li>Your hotel, at the rate we booked it — no markup, ever</li>
-          <li>Meals, shopping, and your own spending</li>
+          <li>Your hotel — booked in your name, at the hotel's own rate</li>
           <li>Flights</li>
+          <li>Meals, shopping, and your own spending</li>
+          <li>We add no markup to any of it, because none of it passes through us</li>
         </ul>
       </div>
     </div>
 
     <div class="p-pay rv">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#a5824d" stroke-width="1.2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
-      <div>
-        <h4>You pay nothing until we've met in Seoul</h4>
-        <p>No deposit. No card details. No wiring money to someone you've never met, eleven time zones away. We plan your week, research your clinics and make your bookings first — and you settle up in person, in cash, once you've arrived and we've shaken hands.</p>
-        <p>If you change your mind before you fly, you owe us nothing at all. We think that's the only fair way to ask a stranger to trust us with a week of their life.</p>
+      <h4>How payment works</h4>
+      <p class="sub">Three steps, and no surprises in any of them.</p>
+      <div class="pay-steps">
+        <div class="pay-step">
+          <span class="n">First</span>
+          <div>
+            <b>Clinic research — $150</b>
+            <p>Talking to us is always free: the first video call costs nothing and carries no obligation. The $150 covers what comes after, if you want it — properly researching clinics against your case, verifying credentials through the Korean registries, and building you a shortlist with honest reasoning, including what we didn't like. <b style="display:inline">It comes off your package price in full</b> if you go ahead, so booking with us costs you nothing extra.</p>
+          </div>
+        </div>
+        <div class="pay-step">
+          <span class="n">Then</span>
+          <div>
+            <b>Your package balance — in person, in Seoul</b>
+            <p>The rest is settled face to face once you've arrived, in cash — US dollars or Korean won, whichever suits you. No large sum wired ahead to someone you've not yet met.</p>
+          </div>
+        </div>
+        <div class="pay-step">
+          <span class="n">Separately</span>
+          <div>
+            <b>Everything else, paid by you, directly</b>
+            <p>Your clinic, your hotel, your flights, your meals — all paid by you, in your own name, at the price they charge. We find the hotel, send you the exact booking and the reasons for it, and you confirm it on your own card. Your money never passes through our hands, so we can never take a cut of it.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -652,8 +676,9 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
       <details>
         <summary>When and how do I pay?<span class="x"></span></summary>
         <div class="faq-a">
-          <p>In person, in Seoul, in cash — and not a moment before. There's no deposit and no card details taken. Everything we do before you arrive, from researching clinics to booking your hotel, we do on trust. You pay us once you're here and we've met.</p>
-          <p>Practically: US dollars or Korean won are both fine. If you'd rather draw won here, the ATMs at Incheon and in any convenience store take foreign cards, and we'll walk you through it. If you decide not to come after all, there's nothing to cancel and nothing owed.</p>
+          <p>Two payments, to us. The $150 consultation fee when we start work on your clinic research — and the balance in person in Seoul, in cash, once you've arrived. If you book a package, that $150 comes off the price in full, so it isn't an extra charge; it simply means the research isn't free to people who were never going to come.</p>
+          <p>Everything else you pay directly to whoever provides it: the clinic, the hotel, the airline, the restaurant. We'll tell you exactly which hotel and why, and send you the booking — but you confirm it on your own card, at their price. We take no commission and add no markup, and the simplest guarantee of that is that your money never touches our account.</p>
+          <p>For the cash portion: US dollars or Korean won are both fine, and ATMs at Incheon and in any convenience store take foreign cards.</p>
         </div>
       </details>
       <details>
