@@ -225,7 +225,8 @@ a.c-way:hover{padding-left:8px}
 .c-way small{display:block;font-size:.67rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,230,.5);margin-bottom:3px}
 .c-way b{font-weight:400;font-size:1.02rem}
 .c-note{margin-top:26px;font-size:.82rem;color:rgba(245,239,230,.55);line-height:1.8}
-.form{background:rgba(250,246,239,.035);border:1px solid rgba(245,239,230,.14);border-radius:3px;padding:clamp(28px,3vw,44px)}
+.form{background:rgba(250,246,239,.035);border:1px solid rgba(245,239,230,.14);border-radius:3px;padding:clamp(28px,3vw,44px);transition:border-color .6s ease,box-shadow .6s ease}
+.form.flash{border-color:var(--gold-soft);box-shadow:0 0 0 3px rgba(194,168,120,.16)}
 .form h3{font-size:1.4rem;margin-bottom:6px}
 .form>p{font-size:.86rem;color:rgba(245,239,230,.6);margin-bottom:28px}
 .fld{margin-bottom:21px}
@@ -707,7 +708,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
 
     <form class="form rv rv-d2" id="inqForm">
       <h3>Request your free video call</h3>
-      <p>Two minutes. We'll reply within 24 hours with honest first thoughts and some times that suit you.</p>
+      <p>Two minutes to fill in. We'll reply within 24 hours with a couple of times that work for you — WhatsApp, FaceTime or Zoom, whichever you prefer.</p>
       <div class="fld">
         <label for="f-name">Your name</label>
         <input id="f-name" name="name" type="text" required autocomplete="name">
@@ -735,6 +736,10 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
           <option>6–12 months</option>
           <option>Just researching for now</option>
         </select>
+      </div>
+      <div class="fld">
+        <label for="f-times">Best times for a call, your time</label>
+        <input id="f-times" name="times" type="text" placeholder="e.g., weekday evenings, or Saturday morning">
       </div>
       <div class="fld">
         <label for="f-msg">Anything you'd like us to know? <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
@@ -812,16 +817,35 @@ document.querySelectorAll(".faq-list details").forEach(d => {
   });
 });
 
-document.getElementById("inqForm").addEventListener("submit", e => {
+/* any CTA pointing at the form should land on it, not just near it */
+const inqForm = document.getElementById("inqForm");
+document.querySelectorAll('a[href="#contact"]').forEach(a => {
+  a.addEventListener("click", () => {
+    setTimeout(() => {
+      inqForm.classList.add("flash");
+      /* focus only on pointer devices — on phones this would throw up the keyboard */
+      if (window.matchMedia("(hover: hover)").matches) {
+        document.getElementById("f-name").focus({preventScroll:true});
+      }
+      setTimeout(() => inqForm.classList.remove("flash"), 1800);
+    }, 700);
+  });
+});
+
+inqForm.addEventListener("submit", e => {
   e.preventDefault();
   const f = e.target;
+  let zone = "";
+  try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (err) {}
   const lines = [
     "Hello ARUM — I'd like to request a free video call.",
     "",
     "Name: " + f.name.value,
     "Traveling from: " + f.from.value,
     "Journey: " + f.journey.value,
-    f.when.value ? "Timeframe: " + f.when.value : "",
+    f.when.value ? "Timeframe: " + f.when.value : null,
+    f.times.value ? "Best times to talk: " + f.times.value : null,
+    zone ? "My time zone: " + zone : null,
     f.message.value ? "" : null,
     f.message.value ? "Note: " + f.message.value : null
   ].filter(l => l !== null).join("\n");
