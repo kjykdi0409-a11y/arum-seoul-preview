@@ -172,7 +172,13 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 .addons li{font-size:.88rem;color:var(--ink-soft);padding-left:22px;position:relative;line-height:1.6}
 .addons li::before{content:"+";position:absolute;left:2px;color:var(--gold);font-weight:600}
 .addons .no li::before{content:"·";color:var(--ink-faint)}
+.p-pay{margin-top:52px;border:1px solid var(--line-gold);border-radius:4px;padding:clamp(28px,3vw,44px);display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;background:linear-gradient(120deg,rgba(165,130,77,.06),transparent 60%)}
+.p-pay svg{width:34px;height:34px;flex:none;margin-top:3px}
+.p-pay h4{font-family:var(--serif);font-weight:500;font-size:1.22rem;margin-bottom:9px}
+.p-pay p{font-size:.93rem;color:var(--ink-soft);max-width:78ch}
+.p-pay p+p{margin-top:10px}
 .p-fine{margin-top:34px;text-align:center;font-size:.83rem;color:var(--ink-faint);line-height:1.9;max-width:74ch;margin-left:auto;margin-right:auto}
+@media(max-width:640px){.p-pay{grid-template-columns:1fr;gap:16px}}
 
 /* founder */
 .founder{background:var(--cream)}
@@ -575,6 +581,15 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
       </div>
     </div>
 
+    <div class="p-pay rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#a5824d" stroke-width="1.2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      <div>
+        <h4>You pay nothing until we've met in Seoul</h4>
+        <p>No deposit. No card details. No wiring money to someone you've never met, eleven time zones away. We plan your week, research your clinics and make your bookings first — and you settle up in person, in cash, once you've arrived and we've shaken hands.</p>
+        <p>If you change your mind before you fly, you owe us nothing at all. We think that's the only fair way to ask a stranger to trust us with a week of their life.</p>
+      </div>
+    </div>
+
     <p class="p-fine rv">Every week is quoted individually — the figures above are where it starts, and your written quote confirms the final number before you commit. It never moves afterwards. We take one client at a time, never two at once. Medical emergencies are answered at any hour, free, always — and if you need us beyond your accompanied days, we stay without charging you.</p>
   </div>
 </section>
@@ -632,6 +647,13 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
         <div class="faq-a">
           <p>Because "free" isn't free — it's just billed to you somewhere you can't see it. Agencies that cost you nothing are paid by clinics for delivering patients, and that money comes out of your quote. Documented broker commissions in Seoul have run from 30% to 90% of the surgery price.</p>
           <p>So the real question isn't free versus paid. It's whether you'd rather pay a fee you can see, to someone who works for you, or a commission you can't see, to someone who works for the clinic. Ours is roughly what a US patient advocate charges for a single day — $150 to $325 an hour is the going rate there — for a week of care here.</p>
+        </div>
+      </details>
+      <details>
+        <summary>When and how do I pay?<span class="x"></span></summary>
+        <div class="faq-a">
+          <p>In person, in Seoul, in cash — and not a moment before. There's no deposit and no card details taken. Everything we do before you arrive, from researching clinics to booking your hotel, we do on trust. You pay us once you're here and we've met.</p>
+          <p>Practically: US dollars or Korean won are both fine. If you'd rather draw won here, the ATMs at Incheon and in any convenience store take foreign cards, and we'll walk you through it. If you decide not to come after all, there's nothing to cancel and nothing owed.</p>
         </div>
       </details>
       <details>
