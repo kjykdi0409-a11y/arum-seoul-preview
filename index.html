@@ -441,6 +441,11 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 .pay-step b{display:block;font-weight:500;font-size:.98rem;margin-bottom:5px}
 .pay-step p{font-size:.91rem;color:var(--ink-soft);max-width:74ch}
 @media(max-width:560px){.pay-step{grid-template-columns:1fr;gap:6px}}
+.p-ask{margin-top:30px;border:1px solid var(--line-gold);border-radius:4px;padding:clamp(28px,3vw,42px);background:linear-gradient(120deg,rgba(165,130,77,.07),transparent 62%);display:grid;grid-template-columns:1fr auto;gap:clamp(20px,3vw,40px);align-items:center}
+.p-ask h4{font-family:var(--serif);font-weight:400;font-size:clamp(1.2rem,2vw,1.5rem);margin-bottom:10px}
+.p-ask p{font-size:.94rem;color:var(--ink-soft);max-width:64ch}
+.p-ask p+p{margin-top:9px}
+@media(max-width:720px){.p-ask{grid-template-columns:1fr}}
 .p-fine{margin-top:34px;text-align:center;font-size:.83rem;color:var(--ink-faint);line-height:1.9;max-width:74ch;margin-left:auto;margin-right:auto}
 @media(max-width:640px){.p-pay{grid-template-columns:1fr;gap:16px}}
 
@@ -448,7 +453,7 @@ header.on-dark:not(.scrolled){color:var(--paper)}
 .founder{background:var(--cream)}
 .f-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(36px,5vw,72px);align-items:start;max-width:1040px;margin:0 auto}
 .f-photo{position:relative}
-.f-photo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:3px;display:block}
+.f-photo img{width:100%;height:auto;border-radius:3px;display:block}
 .f-photo figcaption{margin-top:14px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
 .f-quote{margin:26px 0 30px;padding-left:22px;border-left:2px solid var(--gold)}
 .f-quote p{text-wrap:pretty;font-family:var(--serif);font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.55;color:var(--ink);font-style:italic}
@@ -804,6 +809,15 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
       </div>
     </div>
 
+    <div class="p-ask rv">
+      <div>
+        <h4>Something else in mind? Just ask.</h4>
+        <p>Not every trip fits a package. Some people want one day with an interpreter and nothing more. Some want a few hours at a single appointment. Some aren't having any treatment at all and simply want a guide for the city, in English, who knows where to go.</p>
+        <p>We quote all of it &mdash; <b>by the hour, by the day, or for the whole trip</b>. Message us and you'll have an honest number back, usually the same day. Asking costs nothing and commits you to nothing.</p>
+      </div>
+      <a class="btn btn-wa wa-link" data-wa="Hello ARUM — I'd like to ask about your rates. Here's what I have in mind:" href="https://wa.me/821028685549" target="_blank" rel="noopener">Ask on WhatsApp</a>
+    </div>
+
     <div class="addons rv">
       <div>
         <h4>Add whatever you need</h4>
@@ -864,7 +878,7 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
 <section class="founder section-pad" id="founder">
   <div class="wrap f-grid">
     <figure class="f-photo rv">
-      <img src="alison.jpg" width="1000" height="1333" loading="lazy"
+      <img src="alison-sunset.jpg" width="1000" height="1333" loading="lazy"
            alt="Alison Kim, founder of ARUM Seoul">
       <figcaption>Alison Kim · Seoul</figcaption>
     </figure>
@@ -1085,8 +1099,8 @@ footer{background:#120d07;color:rgba(245,239,230,.55);padding:60px 0 42px;font-s
 const WHATSAPP_NUMBER = "821028685549";
 
 document.querySelectorAll(".wa-link").forEach(a => {
-  a.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" +
-    encodeURIComponent("Hello ARUM — I'm planning a trip to Seoul and would love to talk.");
+  const msg = a.dataset.wa || "Hello ARUM — I'm planning a trip to Seoul and would love to talk.";
+  a.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
 });
 
 const hd = document.getElementById("hd");
