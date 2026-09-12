@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4GLS0TPRG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q4GLS0TPRG');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARUM Seoul — Your Private Companion in Seoul · Beauty, Skin &amp; Culture</title>
@@ -1101,6 +1109,13 @@ const WHATSAPP_NUMBER = "821028685549";
 document.querySelectorAll(".wa-link").forEach(a => {
   const msg = a.dataset.wa || "Hello ARUM — I'm planning a trip to Seoul and would love to talk.";
   a.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+  a.addEventListener("click", () => {
+    const where = a.classList.contains("wa-float") ? "floating"
+                : a.closest(".hero") ? "hero"
+                : a.closest(".pricing") ? "pricing"
+                : a.closest(".contact") ? "contact" : "other";
+    if (window.gtag) gtag("event", "whatsapp_click", {location: where});
+  });
 });
 
 const hd = document.getElementById("hd");
@@ -1164,6 +1179,10 @@ inqForm.addEventListener("submit", e => {
     f.message.value ? "" : null,
     f.message.value ? "Note: " + f.message.value : null
   ].filter(l => l !== null).join("\n");
+  if (window.gtag) gtag("event", "enquiry_submitted", {
+    journey: f.journey.value || "unspecified",
+    timeframe: f.when.value || "unspecified"
+  });
   window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines), "_blank");
 });
 </script>
